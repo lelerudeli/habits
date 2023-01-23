@@ -34,7 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O Habits é um app para ajudar a rastrear os hábitos.
 
-https://lelerudeli.github.io/habits
+- [Visite o projeto online](https://lelerudeli.github.io/habits)
 
 ## 🔖 Layout
 
