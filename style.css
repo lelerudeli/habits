@@ -1,0 +1,127 @@
+* {
+  margin: 0; /*serve pra tirar a margem padrão do navegador para o doc ficar alinhado certinho e não aparecer uma barrinha de subir de descer*/
+  padding: 0; /*tirando preenchimento interno padrão das caixas no html*/
+  box-sizing: border-box; /*manter a ciaxa na mesma largura que foi o programador definir*/
+}
+
+/*seletor de tag -- escolhe a tag html que iremos modificar com as propriedades que daremos à ela no trecho entre as chaves, o que for escrito entre elas vai ser aplicado à tag que o seletor escolheu*/
+
+body {
+  background-color: #09090A;
+  color: white;
+  height: 100vh; /*serve para a podermos visualizar  conteúdo do body na tela inteira do dispositivo, mesmo que o mesmo não preencha a tela toda. a altura do corpo do documento é o tamanho da página de visualização.*/
+}
+
+header {
+  display: flex; 
+  /*display é disposição/visualização. e seu valor pode ser grid, flex, entre outros. ser usarmos o grid, podemo usar uma outra propriedade chamada place-items,para posicionarmos o que tem dentro da tag onde queremos.*/
+  align-items: center; 
+  /*alinhando as duas caixas dentro do head uma do lado da outra*/
+  justify-content: space-between; 
+  /*deixando as caixas justificadas de acordo com  largura do cabeçalho, colocando um espaço entre os elementos*/
+  padding: 48px; 
+  /*preenchimento interno das caixas pra elas não ficarem coladas com a tela, para terem espaço em cima, em baixo e dos lados*/
+
+  position: fixed; /*fixar o cabeçalho na tela*/
+  width: 100%; /*largura ajusta à página*/
+  background-color: #09090A;
+}
+
+button {
+  padding: 16px 24px; /*primeira parte em cima e em baixo e a outra parte nas laterais*/
+  border: 1px solid #8B5CF6; /*informações da borda. dashed é tracejado.*/
+  border-radius: 8px; /*arredondamento de borda*/
+  background-color: transparent;
+  color: white; /*cor do texto*/
+
+  display: flex; /*deixando os items de dentro do botão flexíveis para podemos alinhar*/
+  align-items: center;
+  gap: 12px; /*espaço entre o + e o texto*/
+
+  font-family: 'inter';
+  font-weight: 600; /*fonte fina ou grossa*/
+  font-size: 18px;
+  line-height: 125%; /*altura da linha da borda*/
+}
+
+#form-habits {
+  display: flex; 
+  padding: 182px 48px 48px; /*182px está trazendo o formulário inteiro para baixo para não ficar sobreposto inicialmente, pois o cabeçalho está fixo, 1º 48px está alinhando o form inteiro com o logo do site, por estar preenchendo as laterais, 2º 48px está deixando um espaço embaixo, para não ficar colado na página*/
+  width: fit-content; /*encaixar o conteúdo na largura da tela, pra não fica colado*/
+
+}
+
+.habits { /*formatando os hábitos*/
+  margin-top: 60px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /*gap adiciona um espaçamento entre elementos quando usamos o display flex, neste caso ele está dando um espaçamento de 24 pixel entre cada emoji de hábito*/
+}
+
+.habit { /*fomatando cada hábito em si */
+  width: 64px;
+  height: 64px;
+
+  font-size: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.days{
+  display: flex;
+  gap: 48px; /*espaço entre os dias*/
+  margin-left: 32px; /*espaço da margem da direita, que é o espaço entreas colunas de dias e os emojis de hábitos*/
+}
+
+.day{
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /*espaço entre cada checkbox*/
+}
+
+.day div { /*a day div são as datas*/
+  margin-bottom: 8px; /*expaçamento dos dias com as checkbox*/
+
+  font-family: 'Roboto Mono';
+  font-size: 20px;
+  line-height: 125%;
+  text-align: center;
+  color: #A1A1AA;
+}
+
+input {
+  /*configurando as checkbox*/
+  appearance: none; /*tirando a aparência padrão do input checkbox para podermos aplicar outra propriedades como a borda*/
+  -webkit-appearance: none; /*webkit para ter compatibilidade com todos os navegadores*/
+
+  width: 64px;
+  height: 64px;
+  background: #18181B;
+  border: 2px solid #27272A;
+  border-radius: 8px;
+
+}
+
+/*pseudo-selector, são aqueles que tem os dois pontos*/
+input:checked {
+  /*configurando as checkbox quando estão cheked*/
+
+  background: #8B5CF6;
+  border: 2px solid #A78BFA;
+
+}
+
+/*se meu dispositivo tiver até no máximo 570 pixels de largura da tela, irei aplicar o que está nas chaves*/
+@media (max-width: 570px) {
+  button div { 
+    display: none; /*como colocaos a parte escrita dentro de uma div (caixa), podemos fazer com que essa div não apareça, dessa forma como está no código *lembrando, display=visualização*/
+  }
+} 
+
+/*ANOTAÇÕES 
+
+- A declaração que vem por último é a que é levada em conta. 
+- O nome dessa ultima regra em css é responsividade. adaptar o site para diversos tipos de dispositivo.
