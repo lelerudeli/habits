@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--iniciando o doc html-->
+<html lang="pt-br">
+  <!--atribuindo a linguagem do doc-->
+  <head>
+    <link rel="shortcut icon" href="./assets/LH.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Roboto+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!--a meta tag configura o próprio documento-->
+    <meta charset="UTF-8" />
+    <!--faz com que seja possível o uso de caracteres especiais-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--permite algumas configurações específicas para o navegador edge (explorer) da microsoft-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--modificação do tamanho da largura da página dde acordo com o tamanho do dispositivo// é como se fosse o zoom da página-->
+
+    <title>Habits</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <!--linkando o html com o css. o ./ siginifica que o que nós queremos linkar está no próprio projeto, na própria pasta-->
+  </head>
+
+  <body>
+    <header>
+      <img src="./assets/logo.svg" alt="logomarca do aplicativo habits" />
+
+      <button>
+        <!--criando um botão-->
+        <img src="./assets/plus.svg" alt="sínal de mais roxo" />
+        <!--substituindo o + pelo ícone do sinal de +, para ficar mais bonito-->
+        <div>novo dia</div>
+      </button>
+    </header>
+
+    <!--uma div é como se fosse uma caixa, ou um agrupamento de coisas-->
+    <!--id é o identificador da tag, como se fosse um rg, assim, podemos usar várias tag iguais, mas sem repetir os nomes em nenhum lugar -->
+
+    <form id="form-habits">
+      <!--inserindo os hábitos-->
+      <div class="habits">
+        <!--classifição da caixa agrupando coisas (no caso os habitos)-->
+        <div class="habit" data-name="run">🏃‍♀️</div>
+        <!--classificando e dando nome a cada hábito-->
+        <div class="habit" data-name="water">💧</div>
+        <div class="habit" data-name="workout">💪</div>
+        <div class="habit" data-name="sleep">💤</div>
+        <div class="habit" data-name="dog">🐕</div>
+        <div class="habit" data-name="salad">🥗</div>
+      </div>
+
+      <div class="days"></div>
+    </form>
+
+    <!--colocando a biblioteca que o NLW setup criou especialmente para o programa do Habits-->
+    <script src="https://cdn.jsdelivr.net/gh/maykbrito/libs/NLWSetup/source/NLWSetup.js"></script>
+
+    <script src="./script.js"></script>
+    <!--linkando um doc JS ao HTML-->
+  </body>
+</html>
+
+<!-- ANOTAÇÔES
+
+- A tag svg consegue tranformar imagens em textos para colocarmos no html
+- Todo documento html é visto como caixas.
+-> border - borda da caixa "border: 1px solid red"
+-> margin - espaço ao redor da caixa "margin: 24px"
+-> padding - preenchimento interno da caixa "padding: 12px"
+*todos essas propriedade são colocadas no css*
+- No html temos inputs, que podem ser de texto (para o usuário digitar), checkbox, radio e entre outros
+<input type="text/checkbox/radio"/>
+- Cada input precisa receber um nome
+-->
