@@ -2,6 +2,7 @@
   margin: 0; /*serve pra tirar a margem padrão do navegador para o doc ficar alinhado certinho e não aparecer uma barrinha de subir de descer*/
   padding: 0; /*tirando preenchimento interno padrão das caixas no html*/
   box-sizing: border-box; /*manter a ciaxa na mesma largura que foi o programador definir*/
+  
 }
 
 /*seletor de tag -- escolhe a tag html que iremos modificar com as propriedades que daremos à ela no trecho entre as chaves, o que for escrito entre elas vai ser aplicado à tag que o seletor escolheu*/
@@ -21,14 +22,35 @@ header {
   /*deixando as caixas justificadas de acordo com  largura do cabeçalho, colocando um espaço entre os elementos*/
   padding: 48px; 
   /*preenchimento interno das caixas pra elas não ficarem coladas com a tela, para terem espaço em cima, em baixo e dos lados*/
-
   position: fixed; /*fixar o cabeçalho na tela*/
   width: 100%; /*largura ajusta à página*/
   background-color: #09090A;
 }
 
-button {
-  padding: 16px 24px; /*primeira parte em cima e em baixo e a outra parte nas laterais*/
+.gretting{
+  font-family: 'roboto mono';
+  margin-top: 1%;
+}
+
+.gretting h1{
+  font-style: italic;
+  font-size: 20px;
+}
+
+.gretting h2{
+  margin-top: 1%;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;   
+}
+
+.menu button {
+  padding: 16px 10px; /*primeira parte em cima e em baixo e a outra parte nas laterais*/
   border: 1px solid #8B5CF6; /*informações da borda. dashed é tracejado.*/
   border-radius: 8px; /*arredondamento de borda*/
   background-color: transparent;
@@ -36,12 +58,16 @@ button {
 
   display: flex; /*deixando os items de dentro do botão flexíveis para podemos alinhar*/
   align-items: center;
-  gap: 12px; /*espaço entre o + e o texto*/
+  gap: 6px; /*espaço entre o + e o texto*/
 
-  font-family: 'inter';
   font-weight: 600; /*fonte fina ou grossa*/
-  font-size: 18px;
-  line-height: 125%; /*altura da linha da borda*/
+  font-size: 16px;
+  line-height: 100%; /*altura da linha da borda*/
+}
+
+.menu button:hover{
+  background-color: rgba(167, 139, 250, 0.4);
+  transition: 0.2s;
 }
 
 #form-habits {
@@ -51,23 +77,35 @@ button {
 
 }
 
-.habits { /*formatando os hábitos*/
+#habits { /*formatando os hábitos*/
   margin-top: 60px;
-
   display: flex;
   flex-direction: column;
   gap: 24px; /*gap adiciona um espaçamento entre elementos quando usamos o display flex, neste caso ele está dando um espaçamento de 24 pixel entre cada emoji de hábito*/
 }
 
-.habit { /*fomatando cada hábito em si */
-  width: 64px;
-  height: 64px;
+#habits input { /*fomatando cada hábito em si */
+  font-family: 'inter';
+  border: 1px solid #8B5CF6;
+  border-radius:50px;
+  padding: 5%;
+  background-color: rgba(167, 139, 250, 0.2);
+  font-size: 14px;
+  color: aliceblue;
+  outline: none;
+}
 
-  font-size: 32px;
+#habits input::placeholder{
+  color:#999999;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#habits input:focus{
+  background-color: transparent;
+}
+
+
+.hidden{
+  display: none;
 }
 
 .days{
@@ -87,12 +125,13 @@ button {
 
   font-family: 'Roboto Mono';
   font-size: 20px;
+  font-weight: bold;
   line-height: 125%;
   text-align: center;
   color: #A1A1AA;
 }
 
-input {
+.days input {
   /*configurando as checkbox*/
   appearance: none; /*tirando a aparência padrão do input checkbox para podermos aplicar outra propriedades como a borda*/
   -webkit-appearance: none; /*webkit para ter compatibilidade com todos os navegadores*/
@@ -106,7 +145,7 @@ input {
 }
 
 /*pseudo-selector, são aqueles que tem os dois pontos*/
-input:checked {
+.days input:checked {
   /*configurando as checkbox quando estão cheked*/
 
   background: #8B5CF6;

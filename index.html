@@ -4,10 +4,11 @@
   <!--atribuindo a linguagem do doc-->
   <head>
     <link rel="shortcut icon" href="./assets/LH.png" type="image/png" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Roboto+Mono:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto+Mono:wght@100&display=swap"
       rel="stylesheet"
     />
     <!--a meta tag configura o próprio documento-->
@@ -26,34 +27,56 @@
 
   <body>
     <header>
-      <img src="./assets/logo.svg" alt="logomarca do aplicativo habits" />
+        <div class="logo">
+          <img src="./assets/logo.svg" alt="logomarca do aplicativo habits" />
+        </div>
 
-      <button>
-        <!--criando um botão-->
-        <img src="./assets/plus.svg" alt="sínal de mais roxo" />
-        <!--substituindo o + pelo ícone do sinal de +, para ficar mais bonito-->
-        <div>novo dia</div>
-      </button>
+          <div class="gretting">
+              <div class="gretting-title">
+                <h1>Bem vind@ ao seu site de controle de hábitos!</h1>
+              </div>
+              <div class="subtitle">
+                <h2>Comece criando um novo hábito ou adicionando um novo dia</h2>
+              </div>
+          </div>
+
+        <div class="menu">
+        <div class="newday-button">
+          <button>
+              <!--criando um botão-->
+              <img src="./assets/plus.svg" alt="sínal de mais roxo" />
+              <!--substituindo o + pelo ícone do sinal de +, para ficar mais bonito-->
+              <span>novo dia</span>
+          </button>
+        </div>
+      
+        <div class="newhabit-button">
+          <button>
+             <img src="./assets/plus.svg" alt="sínal de mais roxo" />
+            <span>novo habito</span>
+          </button>
+        </div>
+    </div>
+
+      
     </header>
 
     <!--uma div é como se fosse uma caixa, ou um agrupamento de coisas-->
     <!--id é o identificador da tag, como se fosse um rg, assim, podemos usar várias tag iguais, mas sem repetir os nomes em nenhum lugar -->
 
+
     <form id="form-habits">
       <!--inserindo os hábitos-->
-      <div class="habits">
+      <div id="habits" class="">
         <!--classifição da caixa agrupando coisas (no caso os habitos)-->
-        <div class="habit" data-name="run">🏃‍♀️</div>
-        <!--classificando e dando nome a cada hábito-->
-        <div class="habit" data-name="water">💧</div>
-        <div class="habit" data-name="workout">💪</div>
-        <div class="habit" data-name="sleep">💤</div>
-        <div class="habit" data-name="dog">🐕</div>
-        <div class="habit" data-name="salad">🥗</div>
+          <input id="habit" type="text" maxlength="25"  autocorrect="off" spellcheck="false" placeholder=" ex: correr"
+          oninput="atualizaInput()"> 
+          <span id="resultado"> </span>    
       </div>
 
-      <div class="days"></div>
+      <div class="days"> </div>
     </form>
+
 
     <!--colocando a biblioteca que o NLW setup criou especialmente para o programa do Habits-->
     <script src="https://cdn.jsdelivr.net/gh/maykbrito/libs/NLWSetup/source/NLWSetup.js"></script>

@@ -1,10 +1,19 @@
 const form = document.querySelector("#form-habits") //criando uma variável no js do formulário do doc html, para conseguirmos acessar esse formulário do prórpio js
 const nlwSetup = new NLWSetup(form) //criando uma váriavel para iniciar a biblioteca que precisa de um formulário para poder funcionar
 const button = document.querySelector("header button") //querySelector é pesquisa pelo seletor, como no css.
-
-//esta função fica 'ouvindo' a aplicação e dispara uma outra função a partir de um evento passado como parâmetro
 button.addEventListener("click", add)
 form.addEventListener("change", save)
+
+//esta função fica 'ouvindo' a aplicação e dispara uma outra função a partir de um evento passado como parâmetro
+
+function atualizaInput(){
+   // Obter o valor do input
+    var valorInput = document.getElementById('habit').value;
+
+    // Atualizar o conteúdo do elemento com id 'resultado'
+    document.getElementById('resultado').textContent = valorInput;
+}
+
 
 function add() {
   //data de hoje || transformando fromato de data dos eua para o do br
